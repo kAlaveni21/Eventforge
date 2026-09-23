@@ -1,0 +1,6 @@
+{
+  "name": "EventForge",
+  "description": "Corporate Event and Conference Management System with multi-role access, QR check-in, real-time announcements, ticketing, and Gemini AI assistance.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
