@@ -58,7 +58,8 @@ export const AnnouncementsModal: React.FC<AnnouncementsModalProps> = ({
     fetchAnnouncements();
 
     // Socket.IO real-time listener
-    const socket: Socket = io({ path: '/socket.io' });
+    const backendUrl = import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace(/\/api\/?$/, '') : '';
+    const socket: Socket = io(backendUrl || undefined, { path: '/socket.io' });
 
     socket.on('new_announcement', (newAnn: Announcement) => {
       setAnnouncements((prev) => [newAnn, ...prev]);

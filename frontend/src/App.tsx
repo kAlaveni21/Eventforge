@@ -67,7 +67,8 @@ export default function App() {
     loadEvents();
 
     // Setup Socket.IO listener for live notification toast
-    const socket = io({ path: '/socket.io' });
+    const backendUrl = import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace(/\/api\/?$/, '') : '';
+    const socket = io(backendUrl || undefined, { path: '/socket.io' });
     socket.on('new_announcement', (ann: any) => {
       setUnreadAnnouncements((prev) => prev + 1);
       setLiveToast({ title: ann.title, message: ann.message });
