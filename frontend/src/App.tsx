@@ -67,8 +67,9 @@ export default function App() {
     loadEvents();
 
     // Setup Socket.IO listener for live notification toast
-    const backendUrl = import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace(/\/api\/?$/, '') : '';
-    const socket = io(backendUrl || undefined, { path: '/socket.io' });
+    const envUrl = import.meta.env.VITE_API_URL;
+    const backendUrl = envUrl ? envUrl.replace(/\/api\/?$/, '') : 'https://eventforge-xizc.onrender.com';
+    const socket = io(backendUrl, { path: '/socket.io' });
     socket.on('new_announcement', (ann: any) => {
       setUnreadAnnouncements((prev) => prev + 1);
       setLiveToast({ title: ann.title, message: ann.message });

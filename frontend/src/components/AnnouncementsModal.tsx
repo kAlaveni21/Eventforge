@@ -58,8 +58,9 @@ export const AnnouncementsModal: React.FC<AnnouncementsModalProps> = ({
     fetchAnnouncements();
 
     // Socket.IO real-time listener
-    const backendUrl = import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace(/\/api\/?$/, '') : '';
-    const socket: Socket = io(backendUrl || undefined, { path: '/socket.io' });
+    const envUrl = import.meta.env.VITE_API_URL;
+    const backendUrl = envUrl ? envUrl.replace(/\/api\/?$/, '') : 'https://eventforge-xizc.onrender.com';
+    const socket: Socket = io(backendUrl, { path: '/socket.io' });
 
     socket.on('new_announcement', (newAnn: Announcement) => {
       setAnnouncements((prev) => [newAnn, ...prev]);
