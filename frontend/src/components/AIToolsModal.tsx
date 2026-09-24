@@ -92,7 +92,7 @@ export const AIToolsModal: React.FC = () => {
       <div className="border-b border-slate-200 pb-4">
         <h2 className="text-xl font-bold tracking-tight text-slate-900 flex items-center space-x-2">
           <Sparkles className="h-6 w-6 text-indigo-600" />
-          <span>EventForge AI Studio (Gemini 2.5 Flash)</span>
+          <span>EventForge AI Studio</span>
         </h2>
         <p className="text-xs text-slate-500">
           Intelligent content generation for event organizers, conference speakers, and attendees
