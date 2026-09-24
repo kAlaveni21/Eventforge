@@ -380,10 +380,7 @@ export default function App() {
               <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
               <span>REST & Socket.IO Active</span>
             </span>
-            <span className="flex items-center space-x-1.5 text-indigo-700 font-bold bg-indigo-50 px-2.5 py-1 rounded-lg border border-indigo-200">
-              <Sparkles className="h-3.5 w-3.5 text-indigo-600" />
-              <span>Gemini 2.5 Flash Enabled</span>
-            </span>
+
           </div>
         </div>
       </footer>
